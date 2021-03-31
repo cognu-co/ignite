@@ -7,8 +7,19 @@ import {
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[] = [];
 
-  constructor() {
+  private static INSTANCE = new CategoriesRepository();
+
+  private constructor() {
     this.categories = [];
+  }
+
+  // singleton pattern
+  public static getInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository();
+    }
+
+    return CategoriesRepository.INSTANCE;
   }
 
   create({ name, description }: ICreateCategoryDTO): void {
