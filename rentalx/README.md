@@ -47,3 +47,18 @@
 
 - `-p`: faz um mapeamento das portas.
   - sempre que for acessado na máquina _local_ o endereço **3333**, vai jogar no enderço do _docker_ na porta **4444**
+
+## docker componse
+
+- compositar/administar uma imagem docker. _ex: definir var ENV_
+
+- docker-compose.yml
+
+| func                                | descrição                                    |
+| ----------------------------------- | -------------------------------------------- |
+| `VERSION: "3.7"`                    | define a versao do compose                   |
+| `services: {}`                      | configurações dos servicos a ser orquestrado |
+| `s: app: {}`                        | define o nome do serviço                     |
+| `s: app: build .`                   | vai executar o comando `build .` no serviço  |
+| `s: app: ports: { - 3333:4444 }`    | mapear porta local para o docker             |
+| `s: app: volumes: { - .:/usr/app }` | de `.` principal dir para o `/usr/app`       |

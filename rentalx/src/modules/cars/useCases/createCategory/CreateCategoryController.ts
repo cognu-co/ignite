@@ -8,7 +8,11 @@ class CreateCategoryController {
   handle(request: Request, response: Response): Response {
     const { name, description } = request.body;
 
-    this.createCategoryUseCase.execute({ name, description });
+    try {
+      this.createCategoryUseCase.execute({ name, description });
+    } catch (err) {
+      return response.status(401).json({ error: err.message });
+    }
 
     return response.status(201).send();
   }
