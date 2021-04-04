@@ -54,11 +54,14 @@
 
 - docker-compose.yml
 
-| func                                | descrição                                    |
-| ----------------------------------- | -------------------------------------------- |
-| `VERSION: "3.7"`                    | define a versao do compose                   |
-| `services: {}`                      | configurações dos servicos a ser orquestrado |
-| `s: app: {}`                        | define o nome do serviço                     |
-| `s: app: build .`                   | vai executar o comando `build .` no serviço  |
-| `s: app: ports: { - 3333:4444 }`    | mapear porta local para o docker             |
-| `s: app: volumes: { - .:/usr/app }` | de `.` principal dir para o `/usr/app`       |
+| func                                         | descrição                                          |
+| -------------------------------------------- | -------------------------------------------------- |
+| `VERSION: "3.7"`                             | define a versao do compose                         |
+| `services: {}`                               | configurações dos servicos a ser orquestrado       |
+| `s: app: {}`                                 | define o nome do serviço                           |
+| `s: app: build .`                            | vai executar o comando `build .` no serviço        |
+| `s: app: ports: { - 3333:4444 }`             | mapear porta local para o docker                   |
+| `s: app: volumes: { - .:/usr/app }`          | de `.` principal dir para o `/usr/app`             |
+| `docker-compose up`                          | executa o arquivo do compose ouvindo as alterações |
+| `docker-compose up -d`                       | vai ficar executando em background                 |
+| `docker-compose logs [IMAGE-NAME: rentx] -f` | vai mostra os logs                                 |
