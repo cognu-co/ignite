@@ -65,3 +65,19 @@
 | `docker-compose up`                          | executa o arquivo do compose ouvindo as alterações |
 | `docker-compose up -d`                       | vai ficar executando em background                 |
 | `docker-compose logs [IMAGE-NAME: rentx] -f` | vai mostra os logs                                 |
+
+- docker comandos
+
+  `docker ps -a`: lista todos os containers, mesmo os offlines
+  `docker rm [ID ou NAME]`: vai remover a imagem docker
+  `docker start NAME`: vai iniciar a imagem docker
+  `docker stop ID`: vai para de executar a imagem docker
+  `docker exec -it NAME /bin/bash`: acessa a raiz/DIR da imagem
+  `docker logs NAME -f`: exibe os logs da imagem
+
+- docker compose
+
+  `docker-compose up id`: subir o container em BG
+  `docker-compose start`: inicia a execução do compose
+  `docker-compose stop`: para de executar o compose
+  `docker-compose down`: remove tudo que foi criado
