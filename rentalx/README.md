@@ -82,3 +82,9 @@
   - `docker-compose stop`: para de executar o compose
   - `docker-compose down`: remove tudo que foi criado
   - `docker-compose up --force-recreate`: recria com novas configurações
+  - `docker exec ID cat /etc/hosts`: exeibe infomações sobre o host. ex: IP
+  - `docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ID`: exeibe o IP do ID
+
+- Ao criar serviçoes eles rodam sobre diferentes images, cada imagem tem o seu própio IP.
+  - pode ser resolvido configurando para ambos rodarem na mesma rede.
+    ex: `network_mode:host`: **configura o modo de rede**
