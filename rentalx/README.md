@@ -81,3 +81,4 @@
   - `docker-compose start`: inicia a execução do compose
   - `docker-compose stop`: para de executar o compose
   - `docker-compose down`: remove tudo que foi criado
+  - `docker-compose up --force-recreate`: recria com novas configurações
