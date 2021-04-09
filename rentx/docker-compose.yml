@@ -1,4 +1,4 @@
-# VERSION: "3.8"
+# VERSION: "3.9"
 
 services:
   database_ignite:
@@ -13,13 +13,19 @@ services:
       - POSTGRES_DB=rentx
     volumes:
       - pgdata:/data/postgres
+
   app:
     build: .
     container_name: rentx
+    restart: always
     ports:
       - 3333:3333
     volumes:
       - .:/usr/app
+    links:
+      - database_ignite
+    depends_on:
+      - database_ignite
 
 volumes:
   pgdata:
