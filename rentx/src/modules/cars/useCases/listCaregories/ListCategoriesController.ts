@@ -4,10 +4,10 @@ import { container } from "tsyringe";
 import { ListCategoriesUseCase } from "./ListCategoriesUseCase";
 
 class ListCategoriesController {
-  handle(_request: Request, response: Response): Response {
+  async handle(_request: Request, response: Response): Promise<Response> {
     const categoriesRepository = container.resolve(ListCategoriesUseCase);
 
-    const list = categoriesRepository.execute();
+    const list = await categoriesRepository.execute();
 
     return response.status(201).json({ list });
   }
