@@ -7,11 +7,17 @@ class ListSpecificationsController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name } = request.body;
 
-    const specificationsUseCase = container.resolve(ListSpecificationsUseCase);
+    try {
+      const specificationsUseCase = container.resolve(
+        ListSpecificationsUseCase
+      );
 
-    const specification = await specificationsUseCase.execute(name);
+      const specification = await specificationsUseCase.execute(name);
 
-    return response.json(specification);
+      return response.json(specification);
+    } catch (err) {
+      return response.status(401).json({ error: err.message });
+    }
   }
 }
 
