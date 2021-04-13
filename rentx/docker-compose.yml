@@ -30,4 +30,3 @@ services:
 volumes:
   pgdata:
     driver: local
-  - /usr/app/node_modules
