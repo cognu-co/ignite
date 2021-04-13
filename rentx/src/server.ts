@@ -1,14 +1,15 @@
 import "reflect-metadata";
+import "express-async-errors";
 import express, { NextFunction, Response, Request } from "express";
 import swaggerUi from "swagger-ui-express";
 
+import { AppError } from "./errors/AppError";
 import { routes } from "./routes";
 import swaggerFile from "./swagger.json";
 
 import "./shared/container";
 
 import "./database";
-import { AppError } from "./errors/AppError";
 
 const app = express();
 // MIDDLEWARES
@@ -19,7 +20,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 app.use(routes);
 
 app.use(
-  (err: Error, _request: Request, response: Response, _next: NextFunction) => {
+  (err: Error, _request: Request, response: Response, next: NextFunction) => {
     if (err instanceof AppError) {
       return response.status(err.statusCode).json({
         message: err.message,
