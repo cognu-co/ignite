@@ -37,7 +37,7 @@ export async function ensureAuthenticated(
   const [scheme, token] = parts;
 
   if (!/^Bearer$/i.test(scheme)) {
-    throw new AppError("Token malformated", 401);
+    throw new AppError("Token malformed", 401);
   }
 
   try {
