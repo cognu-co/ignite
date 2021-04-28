@@ -18,6 +18,13 @@
   - `pipe()`
     - para cada **pedaço/chunk** lido ele vai recever esse pedaço
 
+- Usos
+
+| func                 | desc                          |
+| -------------------- | ----------------------------- |
+| `fs.promises.stat`   | verifica se um arquivo existe |
+| `fs.promises.unlink` | remove um arquivo             |
+
 ## Docker
 
 - Dockerfile
