@@ -98,6 +98,8 @@
 
 ## Testes
 
+> Não são feitos em banco de dados de produção
+
 - Testes unitários
 
   - teste de regras de negócio
@@ -132,3 +134,6 @@ configurando **jest.config.ts**
 | testMatch      | pastas onde vão ser feito os testes                |
 | `**/*.spec.ts` | vai ser realizando em todos os arquivos _.spec.ts_ |
 | `bail: true`   | para de rodar apos algum erro                      |
+
+- **funções**
+  - `describe(groupTestName, () => {})`: serve para agrupar os testes.
