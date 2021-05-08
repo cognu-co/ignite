@@ -16,7 +16,7 @@
   - permite ler determinado arquivo por _partes_: `chunck`
 
   - `pipe()`
-    - para cada **pedaço/chunk** lido ele vai recever esse pedaço
+    - para cada **pedaço/chunk** lido ele vai receber esse pedaço
 
 - Usos
 
@@ -55,7 +55,7 @@
 - `-p`: faz um mapeamento das portas.
   - sempre que for acessado na máquina _local_ o endereço **3333**, vai jogar no enderço do _docker_ na porta **4444**
 
-## docker componse
+## docker-compose
 
 - compositar/administar uma imagem docker. _ex: definir var ENV_
 
@@ -95,3 +95,19 @@
 - Ao criar serviçoes eles rodam sobre diferentes images, cada imagem tem o seu própio IP.
   - pode ser resolvido configurando para ambos rodarem na mesma rede.
     ex: `network_mode:host`: **configura o modo de rede**
+
+## Testes
+
+- Testes unitários
+
+  - teste de regras de negócio
+  - testes em pedaços/unidades da aplicação
+  - ex: teste de uma feature
+
+- testes de integração
+
+  - Quando é testado o fluxo da aplicação inteira
+
+- TDD: test driven development.
+  - metodologia usada para fazer testes.
+  - quando é feito primeiro o teste e em seguida é feito a função.
