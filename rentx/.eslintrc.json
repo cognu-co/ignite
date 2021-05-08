@@ -5,8 +5,8 @@
     "jest": true
   },
   "extends": [
-    "airbnb-base", 
-    "plugin:@typescript-eslint/recommended", 
+    "airbnb-base",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
     "plugin:prettier/recommended"
   ],
@@ -48,7 +48,7 @@
       "warn",
       {
         "newlinesBetween": "always",
-        "groups": ["module", "/^@shared/", ["parent", "sibling", "index"]],
+        "groups": ["module", "/^@/", ["parent", "sibling", "index"]],
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ],
