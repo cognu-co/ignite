@@ -111,3 +111,24 @@
 - TDD: test driven development.
   - metodologia usada para fazer testes.
   - quando é feito primeiro o teste e em seguida é feito a função.
+
+## Jest
+
+biblioteca usada para programar os testes em _JS/TS_
+
+- instalando
+
+  - `yarn add jest; yarn add @types/jest`
+  - `yarn add ts-jest -D`: vai rodar os testes em **TS**
+
+- iniciando
+  - `yarn jest --init`: vai fazer as alterações de acordo com as respostas
+
+configurando **jest.config.ts**
+
+| config         | desc                                               |
+| -------------- | -------------------------------------------------- |
+| preset         | `: "ts-jest"`                                      |
+| testMatch      | pastas onde vão ser feito os testes                |
+| `**/*.spec.ts` | vai ser realizando em todos os arquivos _.spec.ts_ |
+| `bail: true`   | para de rodar apos algum erro                      |
