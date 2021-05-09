@@ -5,8 +5,6 @@ import { inject, injectable } from "tsyringe";
 import { AppError } from "@errors/AppError";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 
-import { User } from "../../entities/User";
-
 interface IRequest {
   email: string;
   password: string;

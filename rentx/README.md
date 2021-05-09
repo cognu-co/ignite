@@ -137,3 +137,7 @@ configurando **jest.config.ts**
 
 - **funções**
   - `describe(groupTestName, () => {})`: serve para agrupar os testes.
+
+## Infra
+
+separação das implementações de regras de negócio da aplicação
