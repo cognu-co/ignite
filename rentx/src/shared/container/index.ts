@@ -8,10 +8,9 @@ import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRep
 import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
 
 /**
- * onde as for usada as injeções, ela faz todas a instâncias
+ * onde for usada as injeções, ela faz todas as instâncias
  * necessárias para usar a classe
  */
-// ICategoriesRepository
 container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
   CategoriesRepository
