@@ -19,6 +19,7 @@ examples
 **RF**
 
 - Deve ser possível cadastrar um novo carro
+- Deve ser possível listar todas as categorias
 
 **RN**
 
@@ -32,6 +33,9 @@ examples
 **RF**
 
 - Deve ser possível listar todos carros disponíveis.
+- Deve ser possível listar todos carros disponíveis pelo name da categoria
+- Deve ser possível listar todos carros disponíveis pelo nome da marca
+- Deve ser possível listar todos carros disponíveis pelo nome do carro
 
 **RN**
 
@@ -50,3 +54,5 @@ examples
 - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
 - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
 - O usuário responsável pelo cadastro deve ser um administrador.
+
+## Cadastro de imagens do carro
