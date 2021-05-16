@@ -141,3 +141,16 @@ configurando **jest.config.ts**
 ## Infra
 
 separação das implementações de regras de negócio da aplicação
+
+## foreignKeys
+
+faz junções/relacionamento de tabelas.
+
+| func                               | desc                                                                 |
+| ---------------------------------- | -------------------------------------------------------------------- |
+| `name: 'FKCategoryCar'`            | nome para descrever a foreignKey                                     |
+| `referenceTableName: 'categories'` | tabela de origin, tabela PAI                                         |
+| `referencedColumnNames: ['id']`    | faz referencia dos campos que estão sendo relacionados na tabela PAI |
+| `columnNames: ["category_id"],`    | faz referencia da coluna na tabela atual                             |
+| `onDelete: "SET NULL"`             | quando a tabela PAI sofrer alteração/delete qual ação tomar          |
+| `onDelete: "CASCADE"`              | a coluna atual vai ser removida com a do PAI                         |
