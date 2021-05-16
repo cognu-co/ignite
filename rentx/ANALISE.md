@@ -19,7 +19,6 @@ examples
 **RF**
 
 - Deve ser possível cadastrar um novo carro
-- Deve ser possível listar todas as categorias
 
 **RN**
 
