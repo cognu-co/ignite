@@ -18,11 +18,11 @@ examples
 
 **RF**
 
-- Deve ser possível cadastrar um novo carro
+- [x] Deve ser possível cadastrar um novo carro
 
 **RN**
 
-- Não deve ser possível cadastrar um carro com placa já existente.
+- [x] Não deve ser possível cadastrar um carro com placa já existente.
 - Não deve ser possível alterar a placa de um carro já cadastrado.
 - Por padrão, O carro deve ser cadastrado como disponível.
 - O usuário responsável pelo cadastro deve ser um administrador.
