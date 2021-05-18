@@ -25,7 +25,7 @@ examples
 - [x] Não deve ser possível cadastrar um carro com placa já existente.
 - Não deve ser possível alterar a placa de um carro já cadastrado.
 - [x] Por padrão, O carro deve ser cadastrado como disponível.
-- \*O usuário responsável pelo cadastro deve ser um administrador.
+- [x] O usuário responsável pelo cadastro deve ser um administrador.
 
 ## Listagem de carros
 
