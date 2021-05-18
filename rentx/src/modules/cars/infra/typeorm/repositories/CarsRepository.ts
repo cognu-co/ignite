@@ -43,5 +43,9 @@ class CarsRepository implements ICarsRepository {
       },
     });
   }
+
+  async list(): Promise<Car[]> {
+    return this.repository.find();
+  }
 }
 export { CarsRepository };

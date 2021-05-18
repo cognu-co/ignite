@@ -38,7 +38,7 @@ examples
 
 **RN**
 
-- O usuário não precisa estar logado no sistema.
+- [x] O usuário não precisa estar logado no sistema.
 
 ## Cadastro de especificação no carro
 
@@ -52,7 +52,7 @@ examples
 
 - Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
 - Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
-- O usuário responsável pelo cadastro deve ser um administrador.
+- [x] O usuário responsável pelo cadastro deve ser um administrador.
 
 ## Cadastro de imagens do carro
 
@@ -68,7 +68,7 @@ examples
 **RN**
 
 - O usuário deve poder cadastrar mais de uma imagem para o mesmo carro.
-- O usuário responsável pelo cadastro deve ser um administrador.
+- [x] O usuário responsável pelo cadastro deve ser um administrador.
 
 ## Aluguel de carro
 
