@@ -4,13 +4,14 @@ import express, { NextFunction, Response, Request } from "express";
 import swaggerUi from "swagger-ui-express";
 
 import { AppError } from "@shared/errors/AppError";
+import createConnection from "@shared/infra/typeorm"; // database_
 
 import swaggerFile from "../../../swagger.json";
 import { routes } from "./routes";
 
-import "@shared/infra/typeorm"; // database_
 import "@shared/container";
 
+createConnection();
 const app = express();
 // MIDDLEWARES
 app.use(express.json());
