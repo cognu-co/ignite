@@ -13,8 +13,24 @@ describe("List Cars", () => {
   });
 
   it("should be able to list all available cars", async () => {
+    const car = await carsRepositoryInMemory.create({
+      name: "car1",
+      description: "Description car",
+      daily_rate: 100,
+      license_plate: "ABC-1234",
+      fine_amount: 60,
+      brand: "Brand",
+      category_id: "category",
+    });
+
+    const cars = await listCarUseCase.execute({});
+
+    expect(cars).toEqual([car]);
+  });
+
+  it("should be able to list all available cars by name", async () => {
     const cars = await listCarUseCase.execute();
 
-    expect(cars.length).toBe(1);
+    expect(cars).toEqual([]);
   });
 });
