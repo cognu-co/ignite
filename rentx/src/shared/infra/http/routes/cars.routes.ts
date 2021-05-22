@@ -17,6 +17,6 @@ carsRoutes.post(
 );
 
 const listAvailableCarController = new ListAvailableCarController();
-carsRoutes.get("/", listAvailableCarController.handle);
+carsRoutes.get("/available", listAvailableCarController.handle);
 
 export { carsRoutes };
