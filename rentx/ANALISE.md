@@ -31,10 +31,10 @@ examples
 
 **RF**
 
-- Deve ser possível listar todos carros disponíveis.
-- Deve ser possível listar todos carros disponíveis pelo name da categoria
-- Deve ser possível listar todos carros disponíveis pelo nome da marca
-- Deve ser possível listar todos carros disponíveis pelo nome do carro
+- [x] Deve ser possível listar todos carros disponíveis.
+- [x] Deve ser possível listar todos carros disponíveis pelo name da categoria
+- [x] Deve ser possível listar todos carros disponíveis pelo nome da marca
+- [x] Deve ser possível listar todos carros disponíveis pelo nome do carro
 
 **RN**
 
