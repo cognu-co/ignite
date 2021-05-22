@@ -142,6 +142,20 @@ configurando **jest.config.ts**
 
 separação das implementações de regras de negócio da aplicação
 
+- typeorm query
+
+```ts
+// andWhere : concatena outros wheres
+
+const carsQuery = this.repository
+  .createQueryBuilder("c")
+  .where("available = :available", { available: true });
+
+if (brand) {
+  carsQuery.andWhere("c.brand = :brand", { brand });
+}
+```
+
 ## foreignKeys
 
 faz junções/relacionamento de tabelas.

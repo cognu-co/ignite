@@ -9,10 +9,10 @@ interface IRequest {
   name?: string;
 }
 
-// @injectable()
-class ListCarUseCase {
+@injectable()
+class ListAvailableCarUseCase {
   constructor(
-    // @inject("CarsRepository")
+    @inject("CarsRepository")
     private carsRepository: ICarsRepository
   ) {}
 
@@ -20,4 +20,4 @@ class ListCarUseCase {
     return this.carsRepository.findAvailable(name, brand, category_id);
   }
 }
-export { ListCarUseCase };
+export { ListAvailableCarUseCase };
