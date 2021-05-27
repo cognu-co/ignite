@@ -3,17 +3,25 @@ import { container } from "tsyringe";
 
 import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
+interface IRequest {
+  specifications_id: string[];
+}
+
 class CreateCarSpecificationController {
   async handle(request: Request, response: Response): Promise<Response> {
     const createCarSpecificationUseCase = container.resolve(
       CreateCarSpecificationUseCase
     );
 
-    const { spec } = request.body;
+    const { id } = request.params;
+    const { specifications_id } = request.body as IRequest;
 
-    await createCarSpecificationUseCase.execute();
+    const cars = await createCarSpecificationUseCase.execute({
+      car_id: id,
+      specifications_id,
+    });
 
-    return response.json();
+    return response.json(cars);
   }
 }
 export { CreateCarSpecificationController };

@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { CreateCarController } from "@modules/cars/useCases/createCar/CreateCarController";
+import { CreateCarSpecificationController } from "@modules/cars/useCases/createCarSpecification/CreateCarSpecificationController";
 import { ListAvailableCarController } from "@modules/cars/useCases/listAvailableCar/ListAvailableCarController";
 
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
@@ -19,7 +20,12 @@ carsRoutes.post(
   createCarController.handle
 );
 
-const listAvailableCarController = new ListAvailableCarController();
+carsRoutes.post(
+  "/specifications/:id",
+  ensureAuthenticated,
+  createCarSpecificationController.handle
+);
+
 carsRoutes.get("/available", listAvailableCarController.handle);
 
 export { carsRoutes };
