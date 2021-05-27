@@ -1,3 +1,5 @@
+import { Specification } from "../infra/typeorm/entities/Specification";
+
 interface ICreateCarDTO {
   name: string;
   description: string;
