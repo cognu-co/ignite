@@ -4,14 +4,12 @@ import { container } from "tsyringe";
 import { ListSpecificationsUseCase } from "./ListSpecificationsUseCase";
 
 class ListSpecificationsController {
-  async handle(request: Request, response: Response): Promise<Response> {
-    const { name } = request.body;
-
+  async handle(_request: Request, response: Response): Promise<Response> {
     const specificationsUseCase = container.resolve(ListSpecificationsUseCase);
 
-    const specification = await specificationsUseCase.execute(name);
+    const specifications = await specificationsUseCase.execute();
 
-    return response.json(specification);
+    return response.json(specifications);
   }
 }
 
