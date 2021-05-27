@@ -9,6 +9,9 @@ import { ensureIsAdmin } from "../middlewares/ensureIsAdmin";
 const carsRoutes = Router();
 
 const createCarController = new CreateCarController();
+const createCarSpecificationController = new CreateCarSpecificationController();
+const listAvailableCarController = new ListAvailableCarController();
+
 carsRoutes.post(
   "/",
   ensureAuthenticated,
