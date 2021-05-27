@@ -26,3 +26,7 @@ container.registerSingleton<IUsersRepository>(
   UsersRepository
 );
 container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
+container.registerSingleton<ICarImagesRepository>(
+  "CarImagesRepository",
+  CarImagesRepository
+);
