@@ -1,17 +1,23 @@
 import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { CarsRepositoryInMemory } from "@modules/cars/repositories/in-memory/CarsRepositoryInMemory";
+import { SpecificationsRepositoryInMemory } from "@modules/cars/repositories/in-memory/SpecificationsRepositoryInMemory";
+import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
 import { AppError } from "@shared/errors/AppError";
 
 import { CreateCarSpecificationUseCase } from "./CreateCarSpecificationUseCase";
 
 let createCarSpecificationUseCase: CreateCarSpecificationUseCase;
 let carsRepositoryInMemory: ICarsRepository;
+let specificationsRepositoryInMemory: ISpecificationsRepository;
 
 describe("Create Car specifications", () => {
   beforeEach(() => {
     carsRepositoryInMemory = new CarsRepositoryInMemory();
+    specificationsRepositoryInMemory = new SpecificationsRepositoryInMemory();
+
     createCarSpecificationUseCase = new CreateCarSpecificationUseCase(
-      carsRepositoryInMemory
+      carsRepositoryInMemory,
+      specificationsRepositoryInMemory
     );
   });
 
@@ -37,14 +43,18 @@ describe("Create Car specifications", () => {
       brand: "Brand",
       category_id: "category",
     });
+    const specification = await specificationsRepositoryInMemory.create({
+      name: "test 01",
+      description: "Specification test 01",
+    });
 
-    const specifications_id = [""];
+    const specifications_id = [specification.id];
 
-    const spec = await createCarSpecificationUseCase.execute({
+    const carSpecification = await createCarSpecificationUseCase.execute({
       car_id: car.id,
       specifications_id,
     });
 
-    expect(spec).toBeInstanceOf(CarsRepositoryInMemory);
+    expect(carSpecification.specifications.length).toBe(1);
   });
 });

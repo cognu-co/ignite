@@ -30,7 +30,7 @@ class SpecificationsRepository implements ISpecificationsRepository {
       description,
     });
 
-    await this.repository.save(specification);
+    return this.repository.save(specification);
   }
 
   async findByIds(ids: string[]): Promise<Specification[]> {
