@@ -12,6 +12,10 @@ class SpecificationsRepositoryInMemory implements ISpecificationsRepository {
     this.repository = [];
   }
 
+  list(): Promise<Specification[]> {
+    throw new Error("Method not implemented.");
+  }
+
   async create({
     name,
     description,
