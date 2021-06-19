@@ -32,8 +32,24 @@ describe("Create Rental", () => {
       });
 
       await createRentalUseCase.execute({
-        car_id: "ADF-123",
+        car_id: "ADF-321",
         user_id: "765432_",
+        expected_return_date: new Date(),
+      });
+    }).rejects.toBeInstanceOf(AppError);
+  });
+
+  it("should not be able to create a new rental if there is another open to the same car", () => {
+    expect(async () => {
+      await createRentalUseCase.execute({
+        car_id: "ADF-123",
+        user_id: "897655_",
+        expected_return_date: new Date(),
+      });
+
+      await createRentalUseCase.execute({
+        car_id: "ADF-123",
+        user_id: "375989_",
         expected_return_date: new Date(),
       });
     }).rejects.toBeInstanceOf(AppError);
