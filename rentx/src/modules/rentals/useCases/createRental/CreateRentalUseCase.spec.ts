@@ -1,3 +1,5 @@
+import dayjs from "dayjs";
+
 import { RentalsRepositoryInMemory } from "@modules/rentals/repositories/in-memory/RentalsRepositoryInMemory";
 import { AppError } from "@shared/errors/AppError";
 
@@ -7,6 +9,8 @@ let createRentalUseCase: CreateRentalUseCase;
 let rentalsRepositoryInMemory: RentalsRepositoryInMemory;
 
 describe("Create Rental", () => {
+  const dayAdd24Hours = dayjs().add(1, "day").toDate();
+
   beforeEach(() => {
     rentalsRepositoryInMemory = new RentalsRepositoryInMemory();
     createRentalUseCase = new CreateRentalUseCase(rentalsRepositoryInMemory);
@@ -16,7 +20,7 @@ describe("Create Rental", () => {
     const rental = await createRentalUseCase.execute({
       car_id: "ADF-123",
       user_id: "765432_",
-      expected_return_date: new Date(),
+      expected_return_date: dayAdd24Hours,
     });
 
     expect(rental).toHaveProperty("id");
@@ -28,13 +32,13 @@ describe("Create Rental", () => {
       await createRentalUseCase.execute({
         car_id: "ADF-123",
         user_id: "765432_",
-        expected_return_date: new Date(),
+        expected_return_date: dayAdd24Hours,
       });
 
       await createRentalUseCase.execute({
         car_id: "ADF-321",
         user_id: "765432_",
-        expected_return_date: new Date(),
+        expected_return_date: dayAdd24Hours,
       });
     }).rejects.toBeInstanceOf(AppError);
   });
@@ -44,13 +48,13 @@ describe("Create Rental", () => {
       await createRentalUseCase.execute({
         car_id: "ADF-123",
         user_id: "897655_",
-        expected_return_date: new Date(),
+        expected_return_date: dayAdd24Hours,
       });
 
       await createRentalUseCase.execute({
         car_id: "ADF-123",
         user_id: "375989_",
-        expected_return_date: new Date(),
+        expected_return_date: dayAdd24Hours,
       });
     }).rejects.toBeInstanceOf(AppError);
   });
