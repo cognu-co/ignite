@@ -58,4 +58,14 @@ describe("Create Rental", () => {
       });
     }).rejects.toBeInstanceOf(AppError);
   });
+
+  it("should not be able to create a new rental with invalid return time", () => {
+    expect(async () => {
+      await createRentalUseCase.execute({
+        car_id: "ADF-123",
+        user_id: "897655_",
+        expected_return_date: dayjs().toDate(),
+      });
+    }).rejects.toBeInstanceOf(AppError);
+  });
 });
