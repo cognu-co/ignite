@@ -11,6 +11,9 @@ import { ICarsRepository } from "@modules/cars/repositories/ICarsRepository";
 import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository";
 import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecificationsRepository";
 
+import { IDateProvider } from "./providers/DateProvider/IDateProvider";
+import { DayjsDateProvider } from "./providers/DateProvider/implementations/DayjsDateProvider";
+
 /**
  * onde for usada as injeções, ela faz todas as instâncias
  * necessárias para usar a classe
@@ -32,3 +35,4 @@ container.registerSingleton<ICarImagesRepository>(
   "CarImagesRepository",
   CarImagesRepository
 );
+container.registerSingleton<IDateProvider>("DateProvider", DayjsDateProvider);
