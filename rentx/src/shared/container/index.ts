@@ -15,9 +15,6 @@ import { ISpecificationsRepository } from "@modules/cars/repositories/ISpecifica
 import { RentalsRepository } from "@modules/rentals/infra/typeorm/repositories/RentalsRepository";
 import { IRentalsRepository } from "@modules/rentals/repositories/IRentalsRepository";
 
-import { IDateProvider } from "./providers/DateProvider/IDateProvider";
-import { DayjsDateProvider } from "./providers/DateProvider/implementations/DayjsDateProvider";
-
 /**
  * onde for usada as injeções, ela faz todas as instâncias
  * necessárias para usar a classe
@@ -26,19 +23,24 @@ container.registerSingleton<ICategoriesRepository>(
   "CategoriesRepository",
   CategoriesRepository
 );
+
 container.registerSingleton<ISpecificationsRepository>(
   "SpecificationsRepository",
   SpecificationsRepository
 );
+
 container.registerSingleton<IUsersRepository>(
   "UsersRepository",
   UsersRepository
 );
+
 container.registerSingleton<ICarsRepository>("CarsRepository", CarsRepository);
+
 container.registerSingleton<ICarImagesRepository>(
   "CarImagesRepository",
   CarImagesRepository
 );
+
 container.registerSingleton<IRentalsRepository>(
   "RentalsRepository",
   RentalsRepository
