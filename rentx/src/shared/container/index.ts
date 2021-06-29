@@ -1,5 +1,7 @@
 import { container } from "tsyringe";
 
+import "@shared/container/providers";
+
 import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { CarImagesRepository } from "@modules/cars/infra/typeorm/repositories/CarImagesRepository";
@@ -37,7 +39,6 @@ container.registerSingleton<ICarImagesRepository>(
   "CarImagesRepository",
   CarImagesRepository
 );
-container.registerSingleton<IDateProvider>("DateProvider", DayjsDateProvider);
 container.registerSingleton<IRentalsRepository>(
   "RentalsRepository",
   RentalsRepository
