@@ -31,7 +31,7 @@ class CreateRentalUseCase {
       car_id
     );
     if (carUnavailable) {
-      throw new AppError("Category already in use");
+      throw new AppError("Car already in use");
     }
 
     const rentalOpenToUser = await this.rentalsRepository.findOpenRentalByUser(
