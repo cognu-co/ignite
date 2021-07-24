@@ -111,8 +111,12 @@
   - Quando é testado o fluxo da aplicação inteira
 
 - TDD: test driven development.
+
   - metodologia usada para fazer testes.
   - quando é feito primeiro o teste e em seguida é feito a função.
+
+- SuperTest
+  - permite criar servidor HTTP ao testar a aplicação
 
 ## Jest
 

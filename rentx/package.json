@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --poll --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
-    "test": "jest",
+    "test": "cross-env NODE_ENV=test jest",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seed/admin.ts"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "multer": "^1.4.2",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
+    "supertest": "^6.1.4",
     "swagger-ui-express": "^4.1.6",
     "tsyringe": "^4.6.0",
     "typeorm": "^0.2.32",
@@ -31,10 +32,12 @@
     "@types/jest": "^26.0.23",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/multer": "^1.4.5",
+    "@types/supertest": "^2.0.11",
     "@types/swagger-ui-express": "^4.1.2",
     "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.22.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
