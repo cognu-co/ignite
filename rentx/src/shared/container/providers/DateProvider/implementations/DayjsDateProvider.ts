@@ -13,7 +13,7 @@ class DayjsDateProvider implements IDateProvider {
   compareInHours(start_date: Date, end_date: Date): number {
     return dayjs(this.formatToUTC(end_date)).diff(
       this.formatToUTC(start_date),
-      "hour"
+      "hours"
     );
   }
 
