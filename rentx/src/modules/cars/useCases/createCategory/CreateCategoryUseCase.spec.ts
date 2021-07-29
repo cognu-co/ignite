@@ -6,7 +6,7 @@ import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 let createCategoryUseCase: CreateCategoryUseCase;
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
 
-describe("Create Category", () => {
+describe("Create Category UseCase", () => {
   beforeEach(() => {
     categoriesRepositoryInMemory = new CategoriesRepositoryInMemory();
     createCategoryUseCase = new CreateCategoryUseCase(
