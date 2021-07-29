@@ -80,3 +80,18 @@ examples
 - [x] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo usuário.
 - [x] Não deve ser possível cadastrar um novo aluguel caso já exista um aberto para o mesmo carro.
 - [x] O usuário deve estar logado na aplicação.
+
+## devolução de carro
+
+**RF**
+
+- Deve ser possível realizar a devolução de um carro
+
+**RN**
+
+- [x] Se o carro for devolvido com menos de 24 horas, deverá ser cobrado diária completa.
+- [x] Ao realizar a devolução, o carro deverá ser liberado para outro aluguel.
+- [x] Ao realizar a devolução, o usuário deverá ser liberado para outro aluguel.
+- [x] Ao realizar a devolução, deve ser calculado o total do aluguel.
+- [x] Caso o horário de devolução seja superior ao horário previsto de entrega, deverá ser cobrado multa proporcional aos dias de atraso.
+- [x] Caso haja, multa deverá ser somado ao total de aluguel.
