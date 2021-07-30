@@ -46,12 +46,12 @@ class CreateRentalUseCase {
 
     // O aluguel deve ter duração mínima de 24horas
     const currentDate = this.dateProvider.currentDate();
-    const compare = this.dateProvider.compareInHours(
+    const diffInHours = this.dateProvider.compareInHours(
       currentDate,
       expected_return_date
     );
 
-    if (compare < minimumHours) {
+    if (diffInHours < minimumHours) {
       throw new AppError("Invalid return time");
     }
 
