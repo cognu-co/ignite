@@ -36,10 +36,7 @@ class DevolutionRentalUseCase {
      * verifica quantos dias o aluguel ficou em aberto,
      * se nao demorou menos de 24 horas, vai ser cobrado apenas 1 dia
      */
-    let daily = this.dateProvider.compareInDays(
-      rental.start_date,
-      this.dateProvider.currentDate()
-    );
+    let daily = this.dateProvider.compareInDays(rental.start_date, dateNow);
     if (daily <= 0) {
       daily = minimumDaily;
     }
@@ -60,7 +57,7 @@ class DevolutionRentalUseCase {
     }
     total += daily * car.daily_rate;
 
-    rental.end_date = this.dateProvider.currentDate();
+    rental.end_date = dateNow;
     rental.total = total;
 
     await this.rentalsRepository.create(rental);

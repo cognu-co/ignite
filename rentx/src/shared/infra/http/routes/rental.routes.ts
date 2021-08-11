@@ -11,7 +11,7 @@ const createRentalController = new CreateRentalController();
 const devolutionRentalController = new DevolutionRentalController();
 
 rentalRoutes.post("/", ensureAuthenticated, createRentalController.handle);
-rentalRoutes.patch(
+rentalRoutes.post(
   "/devolution/:id",
   ensureAuthenticated,
   devolutionRentalController.handle
