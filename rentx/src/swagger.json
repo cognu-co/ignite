@@ -80,11 +80,22 @@
         "description": "push a new category list",
         "requestBody": {
           "content": {
-            "application/octet-stream": {
+            "multipart/form-data": {
               "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
               }
             }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
           }
         }
       }
