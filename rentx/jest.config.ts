@@ -237,6 +237,9 @@ export default {
 
   // timers: "real",
 
+  // time to await a async function
+  testTimeout: 30000,
+
   // A map from regular expressions to paths to transformers
 
   // transform: undefined,

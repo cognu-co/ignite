@@ -172,3 +172,7 @@ faz junções/relacionamento de tabelas.
 | `columnNames: ["category_id"],`    | faz referencia da coluna na tabela atual                             |
 | `onDelete: "SET NULL"`             | quando a tabela PAI sofrer alteração/delete qual ação tomar          |
 | `onDelete: "CASCADE"`              | a coluna atual vai ser removida com a do PAI                         |
+
+## Tokens
+
+- refresh token: O sistema vai refazer o tokem antes de expirar
