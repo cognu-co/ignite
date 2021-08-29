@@ -44,7 +44,7 @@ class DevolutionRentalUseCase {
     /**
      * verificar se atrasou o dia de retorno do aluguel,
      * e aplicar multa sobre os dias atrasados,
-     * e calculal o total a ser pago
+     * depois calcula o total a ser pago
      */
     const delay = this.dateProvider.compareInDays(
       dateNow,
