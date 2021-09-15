@@ -11,7 +11,10 @@ container.registerSingleton<IDateProvider>(
   DayjsDateProvider
 );
 
-container.registerSingleton<IMailProvider>(
+/**
+ * vai ser ejetado assim que a aplicação iniciar
+ */
+container.registerInstance<IMailProvider>(
   "EtherealMailProvider",
-  EtherealMailProvider
+  new EtherealMailProvider()
 );
