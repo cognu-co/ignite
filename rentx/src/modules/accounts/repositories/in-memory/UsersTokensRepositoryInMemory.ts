@@ -42,7 +42,7 @@ class UsersTokensRepositoryInMemory implements IUsersTokensRepository {
     const userTokenIndex = this.repository.findIndex(
       (element) => element.id === id
     );
-    this.repository.splice(0, userTokenIndex);
+    this.repository.splice(userTokenIndex);
   }
 
   async findByRefreshToken(token: string): Promise<UserTokens> {

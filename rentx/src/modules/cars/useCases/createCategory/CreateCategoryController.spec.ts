@@ -31,7 +31,7 @@ describe("Create Category controller", () => {
       password: "admin",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -40,7 +40,7 @@ describe("Create Category controller", () => {
         description: "New Category Supertest description",
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(201);
@@ -52,7 +52,7 @@ describe("Create Category controller", () => {
       password: "admin",
     });
 
-    const { token } = responseToken.body;
+    const { refresh_token } = responseToken.body;
 
     const response = await request(app)
       .post("/categories")
@@ -61,7 +61,7 @@ describe("Create Category controller", () => {
         description: "New Category Supertest description",
       })
       .set({
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${refresh_token}`,
       });
 
     expect(response.status).toBe(400);
