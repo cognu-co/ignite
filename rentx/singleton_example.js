@@ -13,8 +13,8 @@ class Singleton {
  * - first connection tried -
  *
  * interface IOptions {
-  host: string;
-}
+ *  host: string;
+ * }
 
 getConnectionOptions().then((options) => {
   const newOptions = options as IOptions;
