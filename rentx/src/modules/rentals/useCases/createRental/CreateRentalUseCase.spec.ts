@@ -13,7 +13,8 @@ let dayjsDateProvider: DayjsDateProvider;
 let carsRepositoryInMemory: CarsRepositoryInMemory;
 
 describe("Create Rental", () => {
-  const dayAdd24Hours = dayjs().add(1, "day").toDate();
+  // new Date("2021-10-18")
+  const dayAdd24Hours = dayjs().add(3, "day").toDate();
 
   beforeEach(() => {
     dayjsDateProvider = new DayjsDateProvider();
@@ -41,7 +42,7 @@ describe("Create Rental", () => {
     const rental = await createRentalUseCase.execute({
       car_id: car.id,
       user_id: "765432_",
-      expected_return_date: new Date("2021-09-18"),
+      expected_return_date: dayAdd24Hours,
     });
 
     expect(rental).toHaveProperty("id");
