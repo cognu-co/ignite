@@ -13,7 +13,7 @@ container.registerSingleton<IDateProvider>(
   DayjsDateProvider
 );
 container.registerSingleton<IStorageProvider>(
-  "LocalStorageProvider",
+  "StorageProvider",
   LocalStorageProvider
 );
 
