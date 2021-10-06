@@ -175,4 +175,20 @@ faz junções/relacionamento de tabelas.
 
 ## Tokens
 
-- refresh token: O sistema vai refazer o tokem antes de expirar
+- refresh token: O sistema vai refazer/atualizar o token antes de expirar
+
+## Storages
+
+> Storage S3: armazenamento da Amazon
+
+- armazenamentos específicos dentro da Nuvem, onde podemos fazer upload de arquivos para dentro deles.
+
+- bucket
+  pasta/arquivo, containers para armazenamento de dados
+
+- criar usuário
+
+> An IAM user is an identity with long-term credentials that is used to interact with AWS in an account.
+
+1 - ir para **"iam"**
+2 - na aba usuários vai em add novo
