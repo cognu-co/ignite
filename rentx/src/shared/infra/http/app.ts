@@ -6,6 +6,7 @@ import "dotenv/config";
 import express, { NextFunction, Response, Request } from "express";
 import swaggerUi from "swagger-ui-express";
 
+import uploadConfig from "@config/upload";
 import { AppError } from "@shared/errors/AppError";
 import createConnection from "@shared/infra/typeorm"; // database_
 
@@ -20,6 +21,8 @@ const app = express();
 app.use(express.json());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+app.use("/avatar", express.static(`${uploadConfig.tmpFolder}/avatar`));
 
 app.use(routes);
 
