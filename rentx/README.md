@@ -206,3 +206,42 @@ faz junções/relacionamento de tabelas.
 - [] SendGrid
 - [] mailGun
 - [] mailchimp
+
+## EC2
+
+- máquina/server para hospedar o código
+
+- criando usuário para gerenciar o Server
+
+  ```sh
+  sudo adduser app
+  sudo usermod -aG sudo app
+
+  sudo su - app # entra no user app
+  ```
+
+- adiciona forma de authenticação: `ssh {user}@[IP]`:`ssh app@12.12.12`
+
+  | VI command | descr                      |
+  | ---------- | -------------------------- |
+  | `i`        | abilita a edição/inserção  |
+  | `ctrl+c`   | finaliza a edição/inserção |
+  | `:wq!`     | salva o arquivo            |
+
+  ```sh
+  mkdir .shh
+  chmod 700 .ssh/ # apenas o usuário criando terá total acesso!
+
+  cd .ssh/
+  touch authorized_keys
+
+  vi authorized_keys # abre a arquivo criado, adicionar a chave publica *ssh-keygen*
+
+  logout # desligá o usuário atual: app
+  exit # desligá o usuário atual: app
+
+  sudo service ssh restart # reinicia o service de SSH
+  ```
+
+  - [x] adicionar o [Node.js](https://github.com/nodesource/distributions/blob/master/README.md)
+  - [x] adicionar [Docker](https://docs.docker.com/engine/install/ubuntu/) na máquina
