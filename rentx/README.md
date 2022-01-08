@@ -197,3 +197,12 @@ faz junções/relacionamento de tabelas.
 
 - send mail
   aws-SES - simple email service
+
+## Email providers
+
+- dedicated IPS: garante um único IP para o envio dos nossos emails, sem compartilhar (IP) com outras aplicações garantindo a reputação dos emails que vamos enviar.
+
+- [x] SES-Amazon (Simple Email Service)
+- [] SendGrid
+- [] mailGun
+- [] mailchimp
