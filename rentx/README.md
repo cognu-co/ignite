@@ -18,6 +18,8 @@
   - `pipe()`
     - para cada **pedaço/chunk** lido ele vai receber esse pedaço
 
+- Mapper: transforma o Objeto e devolve os dados desejados.
+
 - Usos
 
 | func                 | desc                          |
@@ -192,3 +194,6 @@ faz junções/relacionamento de tabelas.
 
 1 - ir para **"iam"**
 2 - na aba usuários vai em add novo
+
+- send mail
+  aws-SES - simple email service
