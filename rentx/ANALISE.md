@@ -109,3 +109,11 @@ examples
 
 - O usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas
+
+### Hospedagem
+  
+  - [X] Criar bucket aws
+  - [] Criar o domain da aplicação
+  - [] Instalar no IPS
+  - [] Connectar serviço de e-mail da AWS
+
