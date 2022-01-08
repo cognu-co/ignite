@@ -245,3 +245,9 @@ faz junções/relacionamento de tabelas.
 
   - [x] adicionar o [Node.js](https://github.com/nodesource/distributions/blob/master/README.md)
   - [x] adicionar [Docker](https://docs.docker.com/engine/install/ubuntu/) na máquina
+
+## babel to build
+
+- JavaScript compiler
+
+- libs: `yarn add @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators babel-plugin-module-resolver babel-plugin-transform-typescript-metadata @babel/preset-typescript @babel/preset-env -D`
