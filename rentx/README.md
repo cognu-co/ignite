@@ -251,3 +251,13 @@ faz junções/relacionamento de tabelas.
 - JavaScript compiler
 
 - libs: `yarn add @babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators babel-plugin-module-resolver babel-plugin-transform-typescript-metadata @babel/preset-typescript @babel/preset-env -D`
+
+## Connect to Github
+
+- gera ssh key no user: APP
+  
+  ```sh
+    ssh-keygen
+    
+    cat cat ~/.ssh/id_rsa.pub # pega a chave gerada
+  ```
