@@ -4,6 +4,11 @@ import { IUserResponseDTO } from "@modules/accounts/dtos/IUserResponseDTO";
 import { UserMap } from "@modules/accounts/mapper/UserMap";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 
+interface IRepositoryResponse {
+  total: number;
+  users: IUserResponseDTO[];
+}
+
 @injectable()
 class UserListUseCase {
   constructor(
@@ -11,12 +16,17 @@ class UserListUseCase {
     private usersRepository: IUsersRepository
   ) {}
 
-  async execute(): Promise<IUserResponseDTO[]> {
-    const users = await this.usersRepository.find();
+  async execute(page = 1): Promise<IRepositoryResponse> {
+    const usersRepositoryResponse = await this.usersRepository.find(page);
 
-    const parsedUsersData = users.map((user) => UserMap.toDTO(user));
+    const parsedUsersData = usersRepositoryResponse.users.map((user) =>
+      UserMap.toDTO(user)
+    );
 
-    return parsedUsersData;
+    return {
+      total: usersRepositoryResponse.total,
+      users: parsedUsersData,
+    };
   }
 }
 

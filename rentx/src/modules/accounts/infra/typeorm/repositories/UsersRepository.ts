@@ -32,10 +32,29 @@ class UsersRepository implements IUsersRepository {
     await this.repository.save(user);
   }
 
-  async find(page = 1): Promise<User[]> {
-    return this.repository.find({
-      take: 10,
+  async find(
+    page = 1,
+    per_page = 10
+  ): Promise<{ total: number; users: User[] }> {
+    /**
+     * Índex de onde começa a pegar os dados na tabela.
+     *
+     * calcular, quando a página for 2, tem que ter registos
+     * de 10 á 20, page = 3, de 20 á 30...
+     */
+    const pageStart = (Number(page) - 1) * Number(per_page);
+
+    const total = await this.repository.count();
+
+    const users = await this.repository.find({
+      skip: pageStart,
+      take: per_page,
     });
+
+    return {
+      total,
+      users,
+    };
   }
 
   async findByEmail(email: string): Promise<User> {
