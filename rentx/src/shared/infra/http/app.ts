@@ -3,6 +3,7 @@ import "express-async-errors";
 
 import "dotenv/config";
 
+import cors from "cors";
 import express, { NextFunction, Response, Request } from "express";
 import swaggerUi from "swagger-ui-express";
 
@@ -19,6 +20,7 @@ createConnection();
 const app = express();
 // MIDDLEWARES
 app.use(express.json());
+app.use(cors());
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
