@@ -261,3 +261,10 @@ faz junções/relacionamento de tabelas.
     
     cat cat ~/.ssh/id_rsa.pub # pega a chave gerada
   ```
+  
+## installing
+
+- basic dev dependencies
+
+  `@babel/cli @babel/core @babel/node @babel/plugin-proposal-class-properties @babel/plugin-proposal-decorators @babel/preset-env @babel/preset-typescript @types/jest  @types/jsonwebtoken @types/uuid babel-plugin-module-resolver babel-plugin-transform-typescript-metadata cross-env eslint-config-prettier eslint-import-resolver-  typescript eslint-plugin-import-helpers eslint-plugin-prettier ts-jest ts-node-dev tsc
+   onfig-paths`
